@@ -1,5 +1,5 @@
 // rsuite
-import { Avatar, Icon, Grid, Panel, FlexboxGrid } from "rsuite";
+import { Avatar, Icon, Grid, Panel, FlexboxGrid, ButtonToolbar, Button } from "rsuite";
 
 //css
 import style from "@/styles/Home.module.css";
@@ -41,6 +41,15 @@ const ContactPage = ({ user, id }) => {
                   <Icon icon="industry" />
                   <p>{user.bussiness_contact}</p>
                 </div>
+
+
+
+              <div style={{marginTop:20}}>
+
+                <ButtonToolbar>
+                  <Button block appearance="primary">Editar Contacto</Button>
+                </ButtonToolbar>
+              </div>
               </Panel>
             );
           })}
