@@ -18,6 +18,7 @@ import style from "@/styles/Home.module.css";
 // ajax
 import serverAxiosUtils from "../../utils/serverAxios.utils";
 import { ModalNumberPhone } from "@/src/common/components";
+import Link from "next/link";
 
 const ContactPage = ({ user, id }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -81,6 +82,15 @@ const ContactPage = ({ user, id }) => {
                   Editar Contacto
                 </Button>
               </ButtonToolbar>
+
+              <div style={{marginTop:20}}>
+
+              <Link href={"/daily"}>
+                <a>
+                  <Button block appearance="subtle"> Volver</Button>
+                </a>
+              </Link>
+              </div>
             </div>
           </Panel>
         </FlexboxGrid>
