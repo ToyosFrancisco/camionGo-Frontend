@@ -17,7 +17,7 @@ const HeaderNewContact = () => {
           <Col xs={12}>
             <FlexboxGrid justify="end">
               <ButtonToolbar>
-                <Link href="/">
+                <Link href="/daily">
                   <a>
                     <Button appearance="subtle">Cancelar</Button>
                   </a>

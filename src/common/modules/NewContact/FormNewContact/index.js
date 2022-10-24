@@ -1,5 +1,8 @@
 // components
 
+
+// utils
+import { tagEmail,tagEvent,tagPhone } from "@/src/utils/selects";
 // rsuite
 import { CustomForm } from "@/src/common/components";
 import {
@@ -17,50 +20,7 @@ import {
 // css
 import style from "./FormNewContact.module.css";
 
-const tagPhone = [
-  {
-    label: "Casa",
-    value: "casa",
-  },
-  {
-    label: "Celular",
-    value: "celular",
-  },
-  {
-    label: "Personalizado",
-    value: "personalizado",
-  },
-];
 
-const tagEmail = [
-  {
-    label: "Principal",
-    value: "principal",
-  },
-  {
-    label: "Trabajo",
-    value: "tabajo",
-  },
-  {
-    label: "Personalizado",
-    value: "personalizado",
-  },
-];
-
-const tagEvent = [
-  {
-    label: "Cumpleaños",
-    value: "cumpleaños",
-  },
-  {
-    label: "Aniversario",
-    value: "aniversario",
-  },
-  {
-    label: "Personalizado",
-    value: "personalizado",
-  },
-]
 
 const FormNewContact = ({
   onChangeTagEmail = () => {},

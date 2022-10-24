@@ -68,7 +68,7 @@ const NewContactPage = () => {
       console.log(response ,'response')
       Alert.success('Se guardo correctamente')
 
-      router.push('/')
+      router.push('/daily')
       return response
     } catch (ex) {
       Alert.error('No se guardo')
