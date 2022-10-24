@@ -15,7 +15,7 @@ import {
 // owner Css
 import style from "./Headers.module.css";
 
-const Headers = () => {
+const Headers = ({onChange = () => {}}) => {
   return (
     <div className={style.wrapperContainer}>
       <Header>
@@ -23,12 +23,12 @@ const Headers = () => {
           <Row>
             <Col xs={8}>
               <div className={style.wrpIconButton}>
-                <IconButton icon={<Icon icon="bars" />} />
+                <IconButton disabled icon={<Icon icon="bars" />} />
               </div>
             </Col>
             <Col xs={8}>
               <InputGroup>
-                <Input placeholder="Buscar Contacto" />
+                <Input onChange={onChange} placeholder="Buscar Contacto" />
                 <InputGroup.Addon>
                   <IconButton icon={<Icon icon="search" />} />
                 </InputGroup.Addon>

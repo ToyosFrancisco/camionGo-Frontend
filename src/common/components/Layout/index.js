@@ -7,10 +7,10 @@ import { Container, Content } from "rsuite";
 // owner css
 import style from "./DiaryLayout.module.css";
 
-const DiaryLayout = ({ children }) => {
+const DiaryLayout = ({ children , onChange }) => {
   return (
     <Container>
-      <Headers />
+      <Headers onChange={onChange}/>
       <Content className={style.wrapperContent}>{children}</Content>
       {/* <Footers /> */}
     </Container>

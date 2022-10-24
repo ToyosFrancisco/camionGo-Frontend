@@ -1,8 +1,7 @@
 // components
 
-
 // utils
-import { tagEmail,tagEvent,tagPhone } from "@/src/utils/selects";
+import { tagEmail, tagEvent, tagPhone } from "@/src/utils/selects";
 // rsuite
 import { CustomForm } from "@/src/common/components";
 import {
@@ -20,56 +19,73 @@ import {
 // css
 import style from "./FormNewContact.module.css";
 
-
-
 const FormNewContact = ({
   onChangeTagEmail = () => {},
   onChangeDate = () => {},
   onChangeTagEvent = () => {},
-  onChangeTagPhone = () => {}
+  onChangeTagPhone = () => {},
+  dfPhone = () => {},
+  dfEmail = () => {},
+  dfDate = () => {},
+  dfEvent = () => {},
 }) => {
   return (
     <Grid>
-        <Panel bordered shaded>
-      <Row>
+      <Panel bordered shaded>
+        <Row>
           <Col xs={24} sm={12} lg={12}>
-            <CustomForm label="Nombre" type='text' name='firstName' />
-            <CustomForm label="Apellido" type='text' name='lastName' />
-            <CustomForm label="Empresa" type='text' name='bussiness_contact' />
-            <CustomForm label="Teléfono" type='text' name='phone' />
+            <CustomForm label="Nombre" type="text" name="firstName" />
+            <CustomForm label="Apellido" type="text" name="lastName" />
+            <CustomForm label="Empresa" type="text" name="bussiness_contact" />
+            <CustomForm label="Teléfono" type="text" name="phone" />
             <FormGroup>
               <ControlLabel>Etiqueta</ControlLabel>
-              <SelectPicker data={tagPhone} style={{ width: '100%' }} onChange={onChangeTagPhone} />
+              <SelectPicker
+                data={tagPhone}
+                defaultValue={dfPhone}
+                style={{ width: "100%" }}
+                onChange={onChangeTagPhone}
+              />
             </FormGroup>
           </Col>
           <Col xs={24} sm={12} lg={12}>
-
             <CustomForm
               label="Correo Electrónico"
               inputAddon={<Icon icon="at" />}
-              type='email'
-              name='email'
+              type="email"
+              name="email"
             />
 
             <FormGroup>
               <ControlLabel>Etiqueta</ControlLabel>
-              <SelectPicker data={tagEmail} style={{ width: '100%' }} onChange={onChangeTagEmail}/>
+              <SelectPicker
+                data={tagEmail}
+                defaultValue={dfEmail}
+                style={{ width: "100%" }}
+                onChange={onChangeTagEmail}
+              />
             </FormGroup>
 
-
-          <FormGroup>
+            <FormGroup>
               <ControlLabel>Fecha Importante</ControlLabel>
-              <DatePicker style={{ width: '100%' }} onChange={onChangeDate}/>
+              <DatePicker
+                style={{ width: "100%" }}
+                defaultValue={dfDate}
+                onChange={onChangeDate}
+              />
             </FormGroup>
-          <FormGroup>
+            <FormGroup>
               <ControlLabel>Etiqueta</ControlLabel>
-              <SelectPicker data={tagEvent} style={{ width: '100%' }} onChange={onChangeTagEvent} />
+              <SelectPicker
+                data={tagEvent}
+                style={{ width: "100%" }}
+                defaultValue={dfEvent}
+                onChange={onChangeTagEvent}
+              />
             </FormGroup>
           </Col>
-
-         
-      </Row>
-        </Panel>
+        </Row>
+      </Panel>
     </Grid>
   );
 };

@@ -64,32 +64,40 @@ const ContactPage = ({ user, id }) => {
                 </Button>
               </ButtonToolbar>
             </div>
-
-            <div style={{ marginBottom: 10 }}>
-              <Icon icon="envelope" />
-              <p>{!!user && user.email.user_email}</p>
-              <span>({!!user && user.email.tag})</span>
-            </div>
-
-            <div>
-              <Icon icon="industry" />
-              <p>{!!user && user.bussiness_contact}</p>
-            </div>
+            {!!user && user.email && (
+              <div style={{ marginBottom: 10 }}>
+                <Icon icon="envelope" />
+                <p>{!!user && user.email.user_email}</p>
+                <span>({!!user && user.email.tag})</span>
+              </div>
+            )}
+            {!!user && user.bussiness_contact && (
+              <div>
+                <Icon icon="industry" />
+                <p>{!!user && user.bussiness_contact}</p>
+              </div>
+            )}
 
             <div style={{ marginTop: 20 }}>
               <ButtonToolbar>
-                <Button block appearance="primary">
-                  Editar Contacto
-                </Button>
+                <Link href={`/editContact/${id}`}>
+                  <a>
+                    <Button block appearance="primary">
+                      Editar Contacto
+                    </Button>
+                  </a>
+                </Link>
               </ButtonToolbar>
 
-              <div style={{marginTop:20}}>
-
-              <Link href={"/daily"}>
-                <a>
-                  <Button block appearance="subtle"> Volver</Button>
-                </a>
-              </Link>
+              <div style={{ marginTop: 20 }}>
+                <Link href={"/daily"}>
+                  <a>
+                    <Button block appearance="subtle">
+                      {" "}
+                      Volver
+                    </Button>
+                  </a>
+                </Link>
               </div>
             </div>
           </Panel>

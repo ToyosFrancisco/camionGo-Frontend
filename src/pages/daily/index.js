@@ -16,6 +16,7 @@ import { Alert } from "rsuite";
 
 export default function Home() {
   const [user, setUser] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   const queryUser = async () => {
     const { data: response } = await ajax.get("/api/users");
@@ -27,42 +28,48 @@ export default function Home() {
     (async () => await queryUser())();
   }, []);
 
-
   // handler
-  const handlerDelete = async(id) => {
-
+  const handlerDelete = async (id) => {
     try {
-      const response = await ajax.delete('api/users',{
-        data:{id:id}
-      })
-      handlerRefresh(true)
-      Alert.success('Eliminado')
-      return response
+      const response = await ajax.delete("api/users", {
+        data: { id: id },
+      });
+      handlerRefresh(true);
+      Alert.success("Eliminado");
+      return response;
     } catch (ex) {
-      Alert.error('No Eliminado')
-      console.log('EX DELETE', ex.message)
+      Alert.error("No Eliminado");
+      console.log("EX DELETE", ex.message);
     }
-  }
+  };
 
   const handlerRefresh = (flag) => {
-    if(flag){
-      queryUser()
+    if (flag) {
+      queryUser();
     }
-  }
-
-
+  };
 
   // sort
   const data = user.sort((a, b) => (a.firstName < b.firstName ? -1 : 1));
 
+  const filterSearch = data.filter((elem) => {
+    return (
+      elem.firstName.toLowerCase().includes(searchInput) &&
+      elem.lastName.toLowerCase().includes(searchInput)
+    );
+  });
+
+  const handlerSearch = (evt) => {
+    setSearchInput(evt);
+  };
 
   return (
-    <DiaryLayout>
+    <DiaryLayout onChange={(evt) => handlerSearch(evt)}>
       <div className={style.title}>
         <h2> Tus Contactos </h2>
       </div>
 
-      {data.map(({ firstName, lastName, _id }) => {
+      {filterSearch.map(({ firstName, lastName, _id }) => {
         return (
           <ContactPersons
             name={`${firstName} ${lastName}`}

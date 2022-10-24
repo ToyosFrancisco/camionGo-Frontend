@@ -5,13 +5,13 @@ import { Button, ButtonToolbar, Col, FlexboxGrid, Grid, Row } from "rsuite";
 // css
 import style from "./HeaderNewContact.module.css";
 
-const HeaderNewContact = () => {
+const HeaderNewContact = ({label = '' , text = ''}) => {
   return (
     <div className={style.wrpContainer}>
       <Grid>
         <Row>
           <Col xs={12}>
-            <h4>Crear Contacto</h4>
+            <h4>{label}</h4>
           </Col>
 
           <Col xs={12}>
@@ -23,7 +23,7 @@ const HeaderNewContact = () => {
                   </a>
                 </Link>
                 <Button type="submit" appearance="primary">
-                  Guardar
+                  { text }
                 </Button>
               </ButtonToolbar>
             </FlexboxGrid>

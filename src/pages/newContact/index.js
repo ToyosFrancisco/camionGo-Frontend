@@ -100,7 +100,7 @@ const NewContactPage = () => {
 
   return (
     <Form onChange={handlerForm} onSubmit={handlerSubmit}>
-      <HeaderNewContact />
+      <HeaderNewContact label='Crear Contacto' text="Guardar"/>
       <FormNewContact
         onChangeDate={handlerSelectTagDate}
         onChangeTagEmail={handlerSelectTagEmail}
