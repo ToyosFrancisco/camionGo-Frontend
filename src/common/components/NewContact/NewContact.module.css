@@ -1,0 +1,44 @@
+.wrpButton {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+  left: 0px;
+  bottom: 50px;
+  right: 180px;
+
+  position: fixed;
+  z-index: 50;
+}
+.buttonGoTo {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px !important;
+  border: 1px solid #0066FF;
+  background-color: #0066FF !important;
+  box-shadow: 0 3px 20px 0px rgba(0, 102, 255, 0.4);
+
+  padding-left: 30px !important;
+}
+
+
+
+.iconCancel {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  font-size: 30px !important;
+}
+.buttonGoTo:hover,
+.buttonGoTo:focus,
+.buttonGoTo:active {
+  color: #fff !important;
+  background-color: rgb(0, 102, 255) !important;
+
+}
+
+
+
+.buttonGoTo:hover .iconCancel {
+  font-size: 25px !important;
+}

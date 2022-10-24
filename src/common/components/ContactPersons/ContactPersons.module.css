@@ -1,0 +1,22 @@
+.wrpPerson{
+    display: inline-flex;
+    padding: 20px;
+}
+
+.textName{
+    margin: auto 0;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+.avatarStyle{
+    background-color: #f3d;
+}
+
+.buttonStyle:hover,.buttonStyle:focus, .buttonStyle:active {
+    background: none;
+}
+
+.buttonStyle{
+    background: none;
+}

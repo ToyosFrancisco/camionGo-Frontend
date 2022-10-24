@@ -1,0 +1,14 @@
+.wrapperContainer{
+    padding: 15px;
+    background-color: #dedede;
+}
+
+.wrpIconButton{
+    padding: 5px;
+}
+
+.wrpAvatar{
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px;
+}
